@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="The story behind Long Branch Farms: pasture-raised beef and pork grown naturally in Grayson County, Kentucky, by a family that raises every animal themselves." />
+  <title>About Us | Long Branch Farms</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    #about-hero {
+      position: relative;
+      min-height: 52vh;
+      display: grid;
+      place-items: end;
+      overflow: hidden;
+    }
+    #about-hero .hero-content { padding-bottom: 4rem; }
+    #about-hero .hero-headline { font-size: clamp(2.4rem, 5.5vw, 4.5rem); max-width: 18ch; }
+
+    #about-body {
+      padding: clamp(4rem, 9vw, 7rem) var(--side);
+      background: var(--cream);
+    }
+    .about-copy {
+      max-width: 62ch;
+      margin: 0 auto;
+    }
+    .about-copy p {
+      font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+      color: #4a3a22;
+      line-height: 1.9;
+      margin-bottom: 1.3rem;
+    }
+    .about-copy p:last-of-type { margin-bottom: 0; }
+
+    #about-gallery {
+      padding: 0 0 clamp(5rem, 10vw, 9rem);
+      background: var(--cream);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header id="site-header">
+    <a href="index.html" class="logo-wrap">
+      <img src="images/LBF-logo-transparent.png" alt="Long Branch Farms Logo" />
+      <span class="logo-name">
+        Long Branch Farms
+        <small>Grayson County, KY</small>
+      </span>
+    </a>
+    <nav>
+      <a href="about.html">About</a>
+      <a href="index.html#products">Shop</a>
+      <a href="contact.html">Contact</a>
+      <a href="index.html#products" class="nav-cta">Order Now</a>
+    </nav>
+  </header>
+
+  <!-- About Hero -->
+  <section id="about-hero">
+    <div class="hero-bg loaded" style="background-image:url('images/photo-19.jpeg');"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow reveal">Our Story</p>
+      <h1 class="hero-headline reveal" style="transition-delay:.1s">
+        Two working parents.<br /><em>One small farm.</em>
+      </h1>
+      <p class="hero-sub reveal" style="transition-delay:.2s">
+        Long Branch Farms is a family operation in Grayson County, Kentucky, raising pasture-fed beef and pork for our neighbors across Western Central Kentucky.
+      </p>
+    </div>
+  </section>
+
+  <!-- Full Story -->
+  <section id="about-body">
+    <div class="about-copy">
+      <p class="section-label reveal" style="justify-content:center">Why We Started</p>
+      <p class="reveal" style="transition-delay:.05s">
+        Long Branch Farms was born out of a desire to provide our community with fresh, healthy, locally grown food. We wanted people in our area to know exactly what they're being fed and how it was raised, so they can trust what ends up on their table.
+      </p>
+      <p class="reveal" style="transition-delay:.1s">
+        We're two working parents raising a six-year-old, running this farm alongside our full-time jobs since 2022. It's a lot to take on, but we believe doing things the right way is always worth the extra effort.
+      </p>
+      <p class="reveal" style="transition-delay:.15s">
+        Everything we raise, we raise ourselves. Our pigs have access to pasture and woods and are fed milk from our own A2/A2 dairy cow, with feed we mix by hand every single day. Our beef is grass-finished from start to finish for a leaner, healthier cut. No antibiotics. No vaccines. No shortcuts. If we wouldn't feed it to our own family, it doesn't leave this farm.
+      </p>
+      <p class="reveal" style="transition-delay:.2s">
+        We proudly serve Western Central Kentucky and are a member of Kentucky Proud, the state's program for locally grown and raised food.
+      </p>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="about-gallery">
+    <div class="feature-grid">
+      <div class="fg-item fg-item-tall">
+        <img src="images/photo-17.jpeg" alt="Long Branch Farms pasture" loading="lazy" />
+        <span class="fg-caption">Open Pasture</span>
+      </div>
+      <div class="fg-item fg-item-wide fg-item-sm">
+        <img src="images/photo-10.jpeg" alt="Farm life at Long Branch Farms" loading="lazy" />
+        <span class="fg-caption">Daily Chores</span>
+      </div>
+      <div class="fg-item fg-item-sm">
+        <img src="images/photo-14.jpeg" alt="Long Branch Farms animals" loading="lazy" />
+        <span class="fg-caption">The Herd</span>
+      </div>
+      <div class="fg-item fg-item-sm">
+        <img src="images/photo-20.jpeg" alt="Long Branch Farms land" loading="lazy" />
+        <span class="fg-caption">Grayson County</span>
+      </div>
+    </div>
+    <div class="photo-strip" style="margin-top:6px;">
+      <div class="photo-strip-item">
+        <img src="images/photo-4.jpeg" alt="Farm photo" loading="lazy" />
+      </div>
+      <div class="photo-strip-item">
+        <img src="images/photo-16.jpeg" alt="Farm photo" loading="lazy" />
+      </div>
+      <div class="photo-strip-item">
+        <img src="images/photo-21.jpeg" alt="Farm photo" loading="lazy" />
+      </div>
+      <div class="photo-strip-item">
+        <img src="images/photo-23.jpeg" alt="Farm photo" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta">
+    <div class="cta-bg" style="background-image:url('images/photo-18.jpeg');"></div>
+    <div class="cta-overlay"></div>
+    <div class="cta-content">
+      <h2 class="reveal">Taste the <em>difference</em><br />real care makes.</h2>
+      <p class="reveal" style="transition-delay:.1s">Bulk orders, bundle boxes, and individual cuts available. Inventory is limited and moves fast.</p>
+      <div class="cta-btns reveal" style="transition-delay:.18s">
+        <a href="index.html#products" class="btn-primary">Shop Our Cuts</a>
+        <a href="contact.html" class="btn-ghost">Ask a Question</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="images/LBF-logo-transparent.png" alt="Long Branch Farms" />
+          <p>Pasture-raised beef and pork grown naturally in Grayson County, Kentucky by a family that cares about what's on your table.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <a href="about.html">About Us</a>
+          <a href="index.html#products">Shop</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Products</h4>
+          <a href="index.html#products">Beef Cuts</a>
+          <a href="index.html#products">Pork Cuts</a>
+          <a href="index.html#products">Bundles &amp; Bulk</a>
+          <a href="index.html#products">Eggs</a>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <p>120 Long Branch Drive<br />Leitchfield, KY 42754</p>
+          <a href="mailto:longbranchfarmsky@gmail.com">longbranchfarmsky@gmail.com</a>
+          <a href="https://www.kyproud.com/members/long-branch-farms" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:0.75rem;">
+            🌿 Kentucky Proud Member
+          </a>
+          <div class="social-row">
+            <a href="https://www.facebook.com/profile.php?id=61573708114780" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="rgba(245,240,232,0.55)" stroke-width="1.5"/><circle cx="12" cy="12" r="4" fill="none" stroke="rgba(245,240,232,0.55)" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="rgba(245,240,232,0.55)"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; <span id="yr"></span> Long Branch Farms. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    const hdr = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      hdr.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
+
+</body>
+</html>
