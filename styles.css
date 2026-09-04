@@ -112,6 +112,165 @@
     }
     nav .nav-cta:hover { background: var(--hay-lt); color: var(--soil); }
 
+    /* ── MOBILE NAV ────────────────────────────────────────────── */
+    .nav-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      margin-right: -0.6rem;
+      padding: 0;
+      background: none;
+      border: 0;
+      color: var(--cream);
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      transition: color var(--dur) var(--ease);
+    }
+    .nav-toggle:hover { color: var(--hay); }
+    .nav-toggle svg,
+    .nav-close svg {
+      width: 24px; height: 24px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.5;
+      flex-shrink: 0;
+    }
+
+    .nav-backdrop {
+      display: none;
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 100vh;
+      height: 100svh;
+      background: var(--soil);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity var(--dur) var(--ease), visibility 0s var(--dur);
+    }
+
+    .nav-drawer {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 0; right: 0;
+      width: min(20rem, 84vw);
+      height: 100vh;
+      height: 100svh;
+      padding: 1.2rem var(--side) 2rem;
+      background: var(--soil);
+      border-left: 1px solid rgba(196,164,90,0.2);
+      overflow-y: auto;
+      transform: translateX(100%);
+      visibility: hidden;
+      transition: transform var(--dur) var(--ease), visibility 0s var(--dur);
+    }
+
+    /* Open: visibility flips immediately so focus can move in; closing waits out the slide. */
+    header.nav-open .nav-backdrop {
+      opacity: 0.6;
+      visibility: visible;
+      transition: opacity var(--dur) var(--ease), visibility 0s;
+    }
+    header.nav-open .nav-drawer {
+      transform: none;
+      visibility: visible;
+      transition: transform var(--dur) var(--ease), visibility 0s;
+    }
+
+    .nav-drawer-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      min-height: 42px;
+      padding-bottom: 1.1rem;
+      border-bottom: 1px solid rgba(196,164,90,0.2);
+    }
+    .nav-drawer-label {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      letter-spacing: 0.04em;
+      color: var(--cream);
+      line-height: 1.2;
+    }
+    .nav-drawer-label small {
+      display: block;
+      font-family: var(--sans);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--hay);
+      font-weight: 400;
+    }
+    .nav-close {
+      width: 44px;
+      height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: -0.6rem;
+      padding: 0;
+      background: none;
+      border: 0;
+      color: var(--cream);
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      transition: color var(--dur) var(--ease);
+    }
+    .nav-close:hover { color: var(--hay); }
+
+    .nav-drawer-links {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+    }
+    .nav-drawer-links a {
+      display: flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 0.85rem 0;
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: rgba(245,240,232,0.65);
+      border-bottom: 1px solid rgba(245,240,232,0.08);
+      transition: color var(--dur) var(--ease), background var(--dur) var(--ease);
+    }
+    .nav-drawer-links a:hover { color: var(--hay); }
+    .nav-drawer-links .nav-drawer-cta {
+      justify-content: center;
+      margin-top: 1.6rem;
+      padding: 0.95rem 1.3rem;
+      background: var(--hay);
+      color: var(--soil);
+      font-weight: 500;
+      border-bottom: 0;
+    }
+    .nav-drawer-links .nav-drawer-cta:hover { background: var(--hay-lt); color: var(--soil); }
+
+    .nav-drawer-note {
+      margin-top: auto;
+      padding-top: 2rem;
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(245,240,232,0.3);
+    }
+
+    body.nav-lock {
+      position: fixed;
+      left: 0;
+      right: 0;
+      width: 100%;
+      overflow: hidden;
+    }
+
     /* ── HERO ──────────────────────────────────────────────────── */
     #hero {
       position: relative;
@@ -811,7 +970,10 @@
       .fg-item-sm { height: 220px; }
     }
     @media (max-width: 660px) {
-      nav a:not(.nav-cta) { display: none; }
+      header > nav { display: none; }
+      .nav-toggle { display: inline-flex; }
+      .nav-backdrop { display: block; }
+      .nav-drawer { display: flex; }
       .pillars { grid-template-columns: 1fr; }
       .promise-list { grid-template-columns: 1fr; }
       .footer-top { grid-template-columns: 1fr; }
