@@ -1,0 +1,12 @@
+# Agent worktrees created by Claude Code. Each is a full copy of the repo,
+# including ~100 MB of images. Never track these.
+.claude/
+
+# Local tooling. sharp is used to generate the optimized image derivatives
+# but is installed with --no-save and is not a project dependency.
+node_modules/
+npm-debug.log*
+
+# OS cruft
+.DS_Store
+Thumbs.db
