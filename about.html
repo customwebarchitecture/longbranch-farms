@@ -46,13 +46,65 @@
   <style>
     #about-hero {
       position: relative;
-      min-height: 52vh;
+      min-height: max(520px, 52vh);
       display: grid;
       place-items: end;
       overflow: hidden;
+      background: var(--soil);
+    }
+    #about-hero .hero-bg {
+      background-position: center 44%;
+    }
+    #about-hero .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0 3% 0 43%;
+      background-image: inherit;
+      background-repeat: no-repeat;
+      background-size: auto 165%;
+      background-position: center 48%;
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 24%);
+      mask-image: linear-gradient(to right, transparent 0%, #000 24%);
+    }
+    #about-hero .hero-overlay {
+      background: linear-gradient(
+        90deg,
+        rgba(15,14,10,0.82) 0%,
+        rgba(15,14,10,0.65) 38%,
+        rgba(15,14,10,0.18) 72%,
+        rgba(15,14,10,0.28) 100%
+      );
     }
     #about-hero .hero-content { padding-bottom: 4rem; }
     #about-hero .hero-headline { font-size: clamp(2.4rem, 5.5vw, 4.5rem); max-width: 18ch; }
+
+    @media (max-width: 700px) {
+      #about-hero {
+        min-height: 720px;
+      }
+      #about-hero .hero-bg {
+        background-position: center 48%;
+      }
+      #about-hero .hero-bg::after {
+        inset: 64px 0 180px;
+        background-size: cover;
+        background-position: center 48%;
+        -webkit-mask-image: none;
+        mask-image: none;
+      }
+      #about-hero .hero-overlay {
+        background: linear-gradient(
+          to bottom,
+          rgba(15,14,10,0.08) 12%,
+          rgba(15,14,10,0.2) 48%,
+          rgba(15,14,10,0.86) 76%,
+          rgba(15,14,10,0.96) 100%
+        );
+      }
+      #about-hero .hero-content {
+        padding-bottom: 2.25rem;
+      }
+    }
 
     #about-body {
       padding: clamp(4rem, 9vw, 7rem) var(--side);
