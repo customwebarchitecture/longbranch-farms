@@ -884,6 +884,15 @@
         url('images/photo-19-1440.webp') type('image/webp'),
         url('images/photo-19.jpeg') type('image/jpeg'));
     }
+    .bg-photo-20 {
+      background-image: url('images/photo-20.jpeg');
+      background-image: -webkit-image-set(
+        url('images/photo-20-1440.webp') type('image/webp'),
+        url('images/photo-20.jpeg') type('image/jpeg'));
+      background-image: image-set(
+        url('images/photo-20-1440.webp') type('image/webp'),
+        url('images/photo-20.jpeg') type('image/jpeg'));
+    }
     .bg-photo-22 {
       background-image: url('images/photo-22.jpeg');
       background-image: -webkit-image-set(
@@ -948,6 +957,15 @@
         background-image: image-set(
           url('images/photo-19-960.webp') type('image/webp'),
           url('images/photo-19-960.jpeg') type('image/jpeg'));
+      }
+      .bg-photo-20 {
+        background-image: url('images/photo-20-960.jpeg');
+        background-image: -webkit-image-set(
+          url('images/photo-20-960.webp') type('image/webp'),
+          url('images/photo-20-960.jpeg') type('image/jpeg'));
+        background-image: image-set(
+          url('images/photo-20-960.webp') type('image/webp'),
+          url('images/photo-20-960.jpeg') type('image/jpeg'));
       }
       .bg-photo-22 {
         background-image: url('images/photo-22-960.jpeg');
@@ -1084,6 +1102,22 @@
       color: rgba(245,240,232,0.25);
       letter-spacing: 0.06em;
     }
+    .footer-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+    .site-credit {
+      font-size: 0.68rem;
+      color: rgba(245,240,232,0.3);
+      letter-spacing: 0.06em;
+    }
+    .site-credit a {
+      color: rgba(196,164,90,0.72);
+      text-decoration: none;
+      transition: color var(--dur) var(--ease);
+    }
+    .site-credit a:hover { color: var(--hay); }
     .footer-legal {
       display: flex;
       gap: 1.5rem;

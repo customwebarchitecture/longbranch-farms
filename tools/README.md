@@ -143,7 +143,7 @@ slightly larger type to buy back pixels.
 
 `check-metadata.mjs` verifies the `<head>` layer of every page: canonical, Open
 Graph and Twitter tags present and non-empty, every asset URL referenced in
-metadata resolving with HTTP 200, and the `index.html` / `contact.html` JSON-LD
+metadata resolving with HTTP 200, and the `index.html` / `contact/index.html` JSON-LD
 parsing and carrying the expected (and only the expected) properties.
 
 ```sh

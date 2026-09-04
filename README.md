@@ -4,7 +4,7 @@ Long Branch Farms was born out of a desire to provide our community with fresh, 
 
 ## Contact form (Web3Forms)
 
-The contact page (`contact.html`) sends messages through **Web3Forms**, a free
+The contact page (`contact/index.html`) sends messages through **Web3Forms**, a free
 hosted form service. It is live and configured — there is no server to run and
 nothing to install or deploy alongside the site.
 
@@ -17,7 +17,7 @@ nothing to install or deploy alongside the site.
   inquiries would be lost, so if traffic or spam picks up, watch the count in
   the Web3Forms dashboard and either upgrade or rotate the key.
 
-**Where the key lives.** `contact.html` contains one line:
+**Where the key lives.** `contact/index.html` contains one line:
 
 ```html
 <input type="hidden" name="access_key" value="..." />
@@ -31,7 +31,7 @@ visible in page source.
 **To rotate it** (worth doing if the form starts drawing spam, which eats into
 the monthly submission allowance): sign in at
 web3forms.com with `longbranchfarmsky@gmail.com`, generate a new access key, and
-paste it into that one line in `contact.html`. Nothing else changes.
+paste it into that one line in `contact/index.html`. Nothing else changes.
 
 If the form ever fails to send, the page keeps the visitor's typed message on
 screen and shows the farm's phone number and email address, so nobody hits a
