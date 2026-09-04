@@ -1,7 +1,12 @@
 # robots.txt for Long Branch Farms
-# Everything on this site is meant to be found. Nothing is disallowed.
+# Every page of the site is meant to be found.
 
 User-agent: *
 Allow: /
+
+# Project working documents, not site content. The intake form carries the
+# owner's personal contact details, so it must not be indexed. Note that this
+# only stops well-behaved crawlers -- exclude /docs/ at deploy time as well.
+Disallow: /docs/
 
 Sitemap: https://www.longbranch-farms.com/sitemap.xml
