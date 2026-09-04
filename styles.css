@@ -981,3 +981,50 @@
       .feature-grid { grid-template-columns: 1fr; }
       .fg-item-tall, .fg-item-wide, .fg-item-sm { grid-column: 1; grid-row: span 1; height: 240px; }
     }
+
+    /* ── PROGRESSIVE-ENHANCEMENT REVEAL ────────────────────────── */
+    /* .reveal is visible by default so every section still renders when
+       JavaScript is disabled, blocked, or throws before the
+       IntersectionObserver registers. A tiny script at the top of <body>
+       adds .js-reveal to <html>, which opts in to the hidden-then-animate
+       behaviour. The transitions themselves stay defined above. */
+    .reveal {
+      opacity: 1;
+      transform: none;
+    }
+    html.js-reveal .reveal:not(.in) {
+      opacity: 0;
+      transform: translateY(28px);
+    }
+
+    /* ── REDUCED MOTION ────────────────────────────────────────── */
+    /* Durations are collapsed rather than set to `none` so transitionend /
+       animationend handlers still fire and nothing is left stuck mid-state. */
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-delay: 0ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        transition-delay: 0ms !important;
+        scroll-behavior: auto !important;
+      }
+      /* Reveal content is shown outright: no fade, no offset, no dependence
+         on the observer ever firing. Beats the inline transition-delay
+         attributes and the .js-reveal opt-in above. */
+      .reveal,
+      html.js-reveal .reveal:not(.in) {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+      /* Hero background: skip the 8s scale(1.04) -> scale(1) push-in. */
+      .hero-bg,
+      .hero-bg.loaded {
+        transform: none;
+      }
+    }
