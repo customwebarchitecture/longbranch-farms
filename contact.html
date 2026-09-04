@@ -253,6 +253,32 @@
 </head>
 
 <body>
+  <script>
+    /* NOTE: this block is duplicated verbatim on all five pages and must stay
+       in sync. It has to be inline and ahead of the content it governs, so it
+       cannot live in a shared file.
+
+       Progressive enhancement: .reveal content is visible by default in CSS so
+       the page is readable with JS disabled, blocked, or broken. This runs as
+       the first thing in <body>, before any revealed content is parsed or
+       painted, so opting in to the hidden-then-animate state cannot flash. */
+    (function () {
+      if (!('IntersectionObserver' in window)) return;
+      var root = document.documentElement;
+      root.classList.add('js-reveal');
+      // Failsafe: if the observer at the foot of the page never registered,
+      // something downstream broke and the hidden state would be permanent.
+      // Drop back to plain visible content. DOMContentLoaded fires after that
+      // inline script has run, so the check is exact; the timer is a backstop
+      // for a parse that never completes. Deliberately not tied to `load`,
+      // which waits on multi-megabyte photos.
+      var failsafe = function () {
+        if (!root.hasAttribute('data-reveal-observer')) root.classList.remove('js-reveal');
+      };
+      document.addEventListener('DOMContentLoaded', failsafe);
+      setTimeout(failsafe, 2000);
+    })();
+  </script>
 
   <!-- Header -->
   <header id="site-header">
@@ -492,17 +518,14 @@
             <a href="https://www.facebook.com/profile.php?id=61573708114780" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
             </a>
-            <a href="#" class="social-link" aria-label="Instagram">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="rgba(245,240,232,0.55)" stroke-width="1.5"/><circle cx="12" cy="12" r="4" fill="none" stroke="rgba(245,240,232,0.55)" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="rgba(245,240,232,0.55)"/></svg>
-            </a>
           </div>
         </div>
       </div>
       <div class="footer-bottom">
         <p class="footer-copy">&copy; <span id="yr"></span> Long Branch Farms. All rights reserved.</p>
         <div class="footer-legal">
-          <a href="#">Privacy</a>
-          <a href="#">Terms</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
           <a href="contact.html">Contact</a>
         </div>
       </div>
@@ -629,12 +652,19 @@
       hdr.classList.toggle('scrolled', window.scrollY > 60);
     }, { passive: true });
 
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-      });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    // Guarded so a browser without IntersectionObserver does not throw here and
+    // abort the rest of this script. Without the observer the .reveal elements
+    // simply stay visible (see the failsafe at the top of <body>).
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+      // Signals to that failsafe that the reveal machinery is live.
+      document.documentElement.setAttribute('data-reveal-observer', 'on');
+    }
   </script>
 
 </body>
