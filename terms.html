@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="The story behind Long Branch Farms: pasture-raised beef and pork grown naturally in Grayson County, Kentucky, by a family that raises every animal themselves." />
-  <title>About Us | Long Branch Farms</title>
+  <meta name="description" content="Terms of sale for Long Branch Farms: how pricing, bulk orders, seasonal availability, delivery, payment, and perishable handling work when you buy beef, pork, or eggs from us." />
+  <title>Terms of Sale | Long Branch Farms</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,7 +12,7 @@
 
   <link rel="stylesheet" href="styles.css" />
 
-  <link rel="canonical" href="https://www.longbranch-farms.com/about.html" />
+  <link rel="canonical" href="https://www.longbranch-farms.com/terms.html" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
   <meta name="theme-color" content="#1a1208" />
 
@@ -27,9 +27,9 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Long Branch Farms" />
   <meta property="og:locale" content="en_US" />
-  <meta property="og:title" content="About Us | Long Branch Farms" />
-  <meta property="og:description" content="The story behind Long Branch Farms: pasture-raised beef and pork grown naturally in Grayson County, Kentucky, by a family that raises every animal themselves." />
-  <meta property="og:url" content="https://www.longbranch-farms.com/about.html" />
+  <meta property="og:title" content="Terms of Sale | Long Branch Farms" />
+  <meta property="og:description" content="Terms of sale for Long Branch Farms: how pricing, bulk orders, seasonal availability, delivery, payment, and perishable handling work when you buy beef, pork, or eggs from us." />
+  <meta property="og:url" content="https://www.longbranch-farms.com/terms.html" />
   <meta property="og:image" content="https://www.longbranch-farms.com/images/social-card.jpg" />
   <meta property="og:image:type" content="image/jpeg" />
   <meta property="og:image:width" content="1200" />
@@ -38,41 +38,107 @@
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="About Us | Long Branch Farms" />
-  <meta name="twitter:description" content="The story behind Long Branch Farms: pasture-raised beef and pork grown naturally in Grayson County, Kentucky, by a family that raises every animal themselves." />
+  <meta name="twitter:title" content="Terms of Sale | Long Branch Farms" />
+  <meta name="twitter:description" content="Terms of sale for Long Branch Farms: how pricing, bulk orders, seasonal availability, delivery, payment, and perishable handling work when you buy beef, pork, or eggs from us." />
   <meta name="twitter:image" content="https://www.longbranch-farms.com/images/social-card.jpg" />
   <meta name="twitter:image:alt" content="The Long Branch Farms logo over cattle, pigs and sheep grazing on Kentucky pasture" />
 
   <style>
-    #about-hero {
+    #legal-hero {
       position: relative;
-      min-height: 52vh;
+      min-height: 42vh;
       display: grid;
       place-items: end;
       overflow: hidden;
     }
-    #about-hero .hero-content { padding-bottom: 4rem; }
-    #about-hero .hero-headline { font-size: clamp(2.4rem, 5.5vw, 4.5rem); max-width: 18ch; }
+    #legal-hero .hero-content { padding-top: 8rem; padding-bottom: 3.5rem; }
+    #legal-hero .hero-headline {
+      font-size: clamp(2.2rem, 4.6vw, 3.6rem);
+      max-width: 20ch;
+      margin-bottom: 1.1rem;
+    }
+    #legal-hero .hero-sub { margin-bottom: 0; }
 
-    #about-body {
-      padding: clamp(4rem, 9vw, 7rem) var(--side);
+    #legal-body {
+      padding: clamp(4rem, 9vw, 7rem) var(--side) clamp(5rem, 10vw, 8rem);
       background: var(--cream);
     }
-    .about-copy {
+    .legal-copy {
       max-width: 62ch;
       margin: 0 auto;
     }
-    .about-copy p {
-      font-size: clamp(0.95rem, 1.2vw, 1.05rem);
-      color: #4a3a22;
-      line-height: 1.9;
-      margin-bottom: 1.3rem;
+    .legal-copy .section-label {
+      font-size: 0.65rem;
+      color: var(--hay);
+      justify-content: center;
     }
-    .about-copy p:last-of-type { margin-bottom: 0; }
+    .legal-copy .section-label::after { flex: none; width: 3rem; }
+    .legal-copy .legal-updated {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ink-fade);
+      margin-bottom: 2.75rem;
+    }
+    .legal-copy h2 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(1.4rem, 2.6vw, 1.95rem);
+      line-height: 1.25;
+      color: var(--bark);
+      margin: 3.25rem 0 1rem;
+    }
+    .legal-copy h3 {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      color: var(--moss);
+      margin: 2rem 0 0.6rem;
+    }
+    .legal-copy p,
+    .legal-copy li {
+      font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+      color: var(--bark);
+      line-height: 1.9;
+    }
+    .legal-copy p { margin-bottom: 1.3rem; }
+    .legal-copy ul,
+    .legal-copy ol {
+      margin: 0 0 1.5rem;
+      padding-left: 1.35rem;
+    }
+    .legal-copy li { margin-bottom: 0.55rem; }
+    .legal-copy li::marker { color: var(--hay); }
+    .legal-copy a {
+      color: var(--moss);
+      text-decoration: underline;
+      text-underline-offset: 0.2em;
+      text-decoration-thickness: 1px;
+      transition: color var(--dur) var(--ease);
+    }
+    .legal-copy a:hover { color: var(--moss-lt); }
+    .legal-copy .legal-intro {
+      font-size: clamp(1.02rem, 1.4vw, 1.15rem);
+      color: var(--soil);
+    }
+    .legal-note {
+      margin-top: 3.25rem;
+      padding: 1.6rem 1.75rem;
+      background: var(--cream-dk);
+      border-left: 2px solid var(--hay);
+    }
+    .legal-note p { margin-bottom: 0; }
 
-    #about-gallery {
-      padding: 0 0 clamp(5rem, 10vw, 9rem);
-      background: var(--cream);
+    @media (max-width: 960px) {
+      #legal-hero { min-height: 40vh; }
+      #legal-hero .hero-content { padding-top: 7.5rem; padding-bottom: 3rem; }
+    }
+    @media (max-width: 660px) {
+      #legal-hero { min-height: 46vh; }
+      #legal-hero .hero-content { padding-top: 7rem; padding-bottom: 2.5rem; }
+      .legal-copy h2 { margin-top: 2.5rem; }
+      .legal-note { padding: 1.25rem; }
     }
   </style>
 </head>
@@ -144,86 +210,143 @@
     </div>
   </header>
 
-  <!-- About Hero -->
-  <section id="about-hero">
-    <div class="hero-bg loaded" style="background-image:url('images/photo-19.jpeg');"></div>
+  <!-- Hero -->
+  <section id="legal-hero">
+    <div class="hero-bg loaded" style="background-image:url('images/photo-22.jpeg');"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <p class="hero-eyebrow reveal">Our Story</p>
+      <p class="hero-eyebrow reveal">Legal</p>
       <h1 class="hero-headline reveal" style="transition-delay:.1s">
-        Two working parents.<br /><em>One small farm.</em>
+        Terms of <em>Sale</em>
       </h1>
       <p class="hero-sub reveal" style="transition-delay:.2s">
-        Long Branch Farms is a family operation in Grayson County, Kentucky, raising pasture-fed beef and pork for our neighbors across Western Central Kentucky.
+        How ordering actually works here: what the prices mean, what we can promise, and what we can't.
       </p>
     </div>
   </section>
 
-  <!-- Full Story -->
-  <section id="about-body">
-    <div class="about-copy">
-      <p class="section-label reveal" style="justify-content:center">Why We Started</p>
-      <p class="reveal" style="transition-delay:.05s">
-        Long Branch Farms was born out of a desire to provide our community with fresh, healthy, locally grown food. We wanted people in our area to know exactly what they're being fed and how it was raised, so they can trust what ends up on their table.
-      </p>
-      <p class="reveal" style="transition-delay:.1s">
-        We're two working parents raising a six-year-old, running this farm alongside our full-time jobs since 2022. It's a lot to take on, but we believe doing things the right way is always worth the extra effort.
-      </p>
-      <p class="reveal" style="transition-delay:.15s">
-        Everything we raise, we raise ourselves. Our pigs have access to pasture and woods and are fed milk from our own A2/A2 dairy cow, with feed we mix by hand every single day. Our beef is grass-finished from start to finish for a leaner, healthier cut. No antibiotics. No vaccines. No shortcuts. If we wouldn't feed it to our own family, it doesn't leave this farm.
-      </p>
-      <p class="reveal" style="transition-delay:.2s">
-        We proudly serve Western Central Kentucky and are a member of Kentucky Proud, the state's program for locally grown and raised food.
-      </p>
-    </div>
-  </section>
+  <!-- Terms -->
+  <section id="legal-body">
+    <div class="legal-copy">
+      <p class="section-label reveal" style="justify-content:center">Long Branch Farms</p>
+      <p class="legal-updated reveal" style="transition-delay:.05s">Last updated: September 4, 2026</p>
 
-  <!-- Gallery -->
-  <section id="about-gallery">
-    <div class="feature-grid">
-      <div class="fg-item fg-item-tall">
-        <img src="images/photo-17.jpeg" alt="Long Branch Farms pasture" loading="lazy" />
-        <span class="fg-caption">Open Pasture</span>
-      </div>
-      <div class="fg-item fg-item-wide fg-item-sm">
-        <img src="images/photo-10.jpeg" alt="Farm life at Long Branch Farms" loading="lazy" />
-        <span class="fg-caption">Daily Chores</span>
-      </div>
-      <div class="fg-item fg-item-sm">
-        <img src="images/photo-14.jpeg" alt="Long Branch Farms animals" loading="lazy" />
-        <span class="fg-caption">The Herd</span>
-      </div>
-      <div class="fg-item fg-item-sm">
-        <img src="images/photo-20.jpeg" alt="Long Branch Farms land" loading="lazy" />
-        <span class="fg-caption">Grayson County</span>
-      </div>
-    </div>
-    <div class="photo-strip" style="margin-top:6px;">
-      <div class="photo-strip-item">
-        <img src="images/photo-4.jpeg" alt="Farm photo" loading="lazy" />
-      </div>
-      <div class="photo-strip-item">
-        <img src="images/photo-16.jpeg" alt="Farm photo" loading="lazy" />
-      </div>
-      <div class="photo-strip-item">
-        <img src="images/photo-21.jpeg" alt="Farm photo" loading="lazy" />
-      </div>
-      <div class="photo-strip-item">
-        <img src="images/photo-23.jpeg" alt="Farm photo" loading="lazy" />
-      </div>
-    </div>
-  </section>
+      <p class="legal-intro reveal" style="transition-delay:.1s">
+        These terms cover buying beef, pork, and eggs from Long Branch Farms, 120 Long Branch Drive, Leitchfield, KY 42754. We've kept them short and in plain English, because you should be able to read them before you order.
+      </p>
 
-  <!-- CTA -->
-  <section id="cta">
-    <div class="cta-bg" style="background-image:url('images/photo-18.jpeg');"></div>
-    <div class="cta-overlay"></div>
-    <div class="cta-content">
-      <h2 class="reveal">Taste the <em>difference</em><br />real care makes.</h2>
-      <p class="reveal" style="transition-delay:.1s">Bulk orders, bundle boxes, and individual cuts available. Inventory is limited and moves fast.</p>
-      <div class="cta-btns reveal" style="transition-delay:.18s">
-        <a href="index.html#products" class="btn-primary">Shop Our Cuts</a>
-        <a href="contact.html" class="btn-ghost">Ask a Question</a>
+      <h2>Ordering</h2>
+      <p>
+        There is no checkout on this website. Nothing you do here charges you or reserves anything. Sending the contact form is an inquiry &mdash; it starts a conversation, it isn't a purchase.
+      </p>
+      <p>
+        <strong>No order is binding until we confirm it with you directly</strong> by text, phone call, or email. That confirmation is where we settle what you're getting, what it costs, and when and where you'll get it. Texting is the fastest way to reach us.
+      </p>
+
+      <h2>Prices</h2>
+      <p>
+        The prices on this site are our current prices. As of today those are:
+      </p>
+      <h3>Beef</h3>
+      <ul>
+        <li>Ribeye &mdash; $22/lb</li>
+        <li>T-Bone &mdash; $18/lb</li>
+        <li>Ground Beef &mdash; $8.50/lb</li>
+        <li>Bulk Beef &mdash; from $4/lb</li>
+      </ul>
+      <h3>Pork</h3>
+      <ul>
+        <li>Bacon &mdash; $8/lb</li>
+        <li>Boston Butt &mdash; $8.50/lb</li>
+        <li>Pork Chops &mdash; $8.50/lb</li>
+        <li>Breakfast Sausage &mdash; $6/lb</li>
+        <li>Ribs &mdash; $8/lb</li>
+        <li>Ham Steak &mdash; $8/lb</li>
+        <li>Shoulder Steak &mdash; $8/lb</li>
+        <li>Tenderloin &mdash; $9/lb</li>
+        <li>Lard &mdash; $3/lb</li>
+      </ul>
+      <h3>Bundles and eggs</h3>
+      <ul>
+        <li>Bulk Pork &mdash; $4/lb</li>
+        <li>Pork Bundle Box (10 lbs) &mdash; $80</li>
+        <li>Breakfast Bundle Box &mdash; $35</li>
+        <li>Eggs &mdash; $3/dozen</li>
+      </ul>
+      <p>
+        Prices can change. Feed costs, processing costs, and what we actually have on hand all move, and this page and the shop page may not update the same day. The price we confirm with you when we take your order is the price you pay.
+      </p>
+
+      <h3>What's included</h3>
+      <ul>
+        <li>Bulk beef and bulk pork pricing <strong>includes the processing fee</strong>. You don't get a second bill from the processor.</li>
+        <li>The Pork Bundle Box <strong>includes delivery</strong>.</li>
+      </ul>
+
+      <h3>How bulk orders are weighed</h3>
+      <p>
+        Bulk beef and pork are sold by the pound, so the final total depends on the animal. We'll tell you at order time whether we're pricing on hanging weight or packaged weight, and roughly what range to expect. That per-pound figure is final once the weight is confirmed. No animal comes out to an exact number, so treat any estimate we give you beforehand as an estimate.
+      </p>
+
+      <h2>Availability</h2>
+      <p>
+        We raise everything we sell, so what we have depends on what's been raised and processed. Inventory is seasonal and limited. Something listed on this site may be sold out or not available at all right now, and that's the normal rhythm of a small farm, not a mistake on the page. If we can't fill your order, we'll tell you and either give you a timeline or refund anything you've already paid.
+      </p>
+      <p>
+        We hope to add chicken down the road. We aren't taking orders for it yet.
+      </p>
+
+      <h2>Delivery and pickup</h2>
+      <p>
+        We serve Western Central Kentucky. Delivery and farm pickup are arranged with you directly when we confirm the order &mdash; there's no shipping option and we don't ship out of the area. Freezer space matters here: for a bulk order, make sure you have room before we set a date.
+      </p>
+
+      <h2>Payment</h2>
+      <p>
+        Payment is arranged directly with us. This website processes no payments and stores no payment information &mdash; there's no card field anywhere on it. We'll agree on the method when we confirm your order.
+      </p>
+
+      <h2>Perishable food</h2>
+      <p>
+        This is fresh and frozen meat. Once we hand it to you at the agreed time and place, keeping it cold is up to you &mdash; get it into a refrigerator or freezer promptly. Please be there at the time we agree on, or send someone who can be.
+      </p>
+      <p>
+        Because it's perishable, we can't take returns on meat once it has left our custody. The exception matters: if something was misrepresented, damaged, or isn't what we said it was, <strong>contact us right away</strong> &mdash; that same day if you can &mdash; and we'll make it right. We'd rather hear about it than have you eat something you're unhappy with.
+      </p>
+
+      <h2>How we raise it</h2>
+      <p>
+        These describe our own practices on our own farm:
+      </p>
+      <ul>
+        <li>We raise our animals without antibiotics, vaccines, or added hormones.</li>
+        <li>Our pigs have access to pasture and woods, and eat feed we mix by hand every day, supplemented with milk from our own A2/A2 dairy cow.</li>
+        <li>Our beef is grass-finished.</li>
+        <li>Processing is done by a licensed processor.</li>
+      </ul>
+      <p>
+        We are not USDA-certified organic and we don't claim to be. Certification is a separate program with its own paperwork and inspections, and we haven't gone through it. What we're telling you is how we farm. Come look, or ask us anything about it.
+      </p>
+
+      <h2>Website content</h2>
+      <p>
+        We keep this site accurate, but prices, photos, and product lists can fall behind what's in the freezer. Photos show our farm and our animals; they're not a promise of the exact cut you'll receive. When the site and what we tell you directly disagree, what we tell you directly is right.
+      </p>
+
+      <h2>Governing law</h2>
+      <p>
+        These terms are governed by the laws of the Commonwealth of Kentucky.
+      </p>
+
+      <h2>Changes to these terms</h2>
+      <p>
+        We may update this page. The terms that apply to your order are the ones posted when we confirmed it. The date at the top tells you when we last made a change.
+      </p>
+
+      <div class="legal-note">
+        <p>
+          Questions before you order? Text or call <a href="tel:+12702302339">(270) 230-2339</a>, or email <a href="mailto:longbranchfarmsky@gmail.com">longbranchfarmsky@gmail.com</a>. Text gets the fastest answer. See also our <a href="privacy.html">privacy policy</a>.
+        </p>
       </div>
     </div>
   </section>

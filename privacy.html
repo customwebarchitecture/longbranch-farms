@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="The story behind Long Branch Farms: pasture-raised beef and pork grown naturally in Grayson County, Kentucky, by a family that raises every animal themselves." />
-  <title>About Us | Long Branch Farms</title>
+  <meta name="description" content="How Long Branch Farms handles your information: what our contact form collects, who processes it, how long we keep it, and how to have it deleted." />
+  <title>Privacy Policy | Long Branch Farms</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,7 +12,7 @@
 
   <link rel="stylesheet" href="styles.css" />
 
-  <link rel="canonical" href="https://www.longbranch-farms.com/about.html" />
+  <link rel="canonical" href="https://www.longbranch-farms.com/privacy.html" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
   <meta name="theme-color" content="#1a1208" />
 
@@ -27,9 +27,9 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Long Branch Farms" />
   <meta property="og:locale" content="en_US" />
-  <meta property="og:title" content="About Us | Long Branch Farms" />
-  <meta property="og:description" content="The story behind Long Branch Farms: pasture-raised beef and pork grown naturally in Grayson County, Kentucky, by a family that raises every animal themselves." />
-  <meta property="og:url" content="https://www.longbranch-farms.com/about.html" />
+  <meta property="og:title" content="Privacy Policy | Long Branch Farms" />
+  <meta property="og:description" content="How Long Branch Farms handles your information: what our contact form collects, who processes it, how long we keep it, and how to have it deleted." />
+  <meta property="og:url" content="https://www.longbranch-farms.com/privacy.html" />
   <meta property="og:image" content="https://www.longbranch-farms.com/images/social-card.jpg" />
   <meta property="og:image:type" content="image/jpeg" />
   <meta property="og:image:width" content="1200" />
@@ -38,41 +38,113 @@
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="About Us | Long Branch Farms" />
-  <meta name="twitter:description" content="The story behind Long Branch Farms: pasture-raised beef and pork grown naturally in Grayson County, Kentucky, by a family that raises every animal themselves." />
+  <meta name="twitter:title" content="Privacy Policy | Long Branch Farms" />
+  <meta name="twitter:description" content="How Long Branch Farms handles your information: what our contact form collects, who processes it, how long we keep it, and how to have it deleted." />
   <meta name="twitter:image" content="https://www.longbranch-farms.com/images/social-card.jpg" />
   <meta name="twitter:image:alt" content="The Long Branch Farms logo over cattle, pigs and sheep grazing on Kentucky pasture" />
 
   <style>
-    #about-hero {
+    #legal-hero {
       position: relative;
-      min-height: 52vh;
+      min-height: 42vh;
       display: grid;
       place-items: end;
       overflow: hidden;
     }
-    #about-hero .hero-content { padding-bottom: 4rem; }
-    #about-hero .hero-headline { font-size: clamp(2.4rem, 5.5vw, 4.5rem); max-width: 18ch; }
+    #legal-hero .hero-content { padding-top: 8rem; padding-bottom: 3.5rem; }
+    #legal-hero .hero-headline {
+      font-size: clamp(2.2rem, 4.6vw, 3.6rem);
+      max-width: 20ch;
+      margin-bottom: 1.1rem;
+    }
+    #legal-hero .hero-sub { margin-bottom: 0; }
 
-    #about-body {
-      padding: clamp(4rem, 9vw, 7rem) var(--side);
+    #legal-body {
+      padding: clamp(4rem, 9vw, 7rem) var(--side) clamp(5rem, 10vw, 8rem);
       background: var(--cream);
     }
-    .about-copy {
+    .legal-copy {
       max-width: 62ch;
       margin: 0 auto;
     }
-    .about-copy p {
-      font-size: clamp(0.95rem, 1.2vw, 1.05rem);
-      color: #4a3a22;
-      line-height: 1.9;
-      margin-bottom: 1.3rem;
+    .legal-copy .section-label {
+      font-size: 0.65rem;
+      color: var(--hay);
+      justify-content: center;
     }
-    .about-copy p:last-of-type { margin-bottom: 0; }
+    .legal-copy .section-label::after { flex: none; width: 3rem; }
+    .legal-copy .legal-updated {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ink-fade);
+      margin-bottom: 2.75rem;
+    }
+    .legal-copy h2 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(1.4rem, 2.6vw, 1.95rem);
+      line-height: 1.25;
+      color: var(--bark);
+      margin: 3.25rem 0 1rem;
+    }
+    .legal-copy h3 {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      color: var(--moss);
+      margin: 2rem 0 0.6rem;
+    }
+    .legal-copy p,
+    .legal-copy li {
+      font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+      color: var(--bark);
+      line-height: 1.9;
+    }
+    .legal-copy p { margin-bottom: 1.3rem; }
+    .legal-copy ul,
+    .legal-copy ol {
+      margin: 0 0 1.5rem;
+      padding-left: 1.35rem;
+    }
+    .legal-copy li { margin-bottom: 0.55rem; }
+    .legal-copy li::marker { color: var(--hay); }
+    .legal-copy a {
+      color: var(--moss);
+      text-decoration: underline;
+      text-underline-offset: 0.2em;
+      text-decoration-thickness: 1px;
+      transition: color var(--dur) var(--ease);
+    }
+    .legal-copy a:hover { color: var(--moss-lt); }
+    .legal-copy code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.9em;
+      color: var(--moss);
+      word-break: break-word;
+    }
+    .legal-copy .legal-intro {
+      font-size: clamp(1.02rem, 1.4vw, 1.15rem);
+      color: var(--soil);
+    }
+    .legal-note {
+      margin-top: 3.25rem;
+      padding: 1.6rem 1.75rem;
+      background: var(--cream-dk);
+      border-left: 2px solid var(--hay);
+    }
+    .legal-note p { margin-bottom: 0; }
 
-    #about-gallery {
-      padding: 0 0 clamp(5rem, 10vw, 9rem);
-      background: var(--cream);
+    @media (max-width: 960px) {
+      #legal-hero { min-height: 40vh; }
+      #legal-hero .hero-content { padding-top: 7.5rem; padding-bottom: 3rem; }
+    }
+    @media (max-width: 660px) {
+      #legal-hero { min-height: 46vh; }
+      #legal-hero .hero-content { padding-top: 7rem; padding-bottom: 2.5rem; }
+      .legal-copy h2 { margin-top: 2.5rem; }
+      .legal-note { padding: 1.25rem; }
     }
   </style>
 </head>
@@ -144,86 +216,101 @@
     </div>
   </header>
 
-  <!-- About Hero -->
-  <section id="about-hero">
-    <div class="hero-bg loaded" style="background-image:url('images/photo-19.jpeg');"></div>
+  <!-- Hero -->
+  <section id="legal-hero">
+    <div class="hero-bg loaded" style="background-image:url('images/photo-11.jpeg');"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <p class="hero-eyebrow reveal">Our Story</p>
+      <p class="hero-eyebrow reveal">Legal</p>
       <h1 class="hero-headline reveal" style="transition-delay:.1s">
-        Two working parents.<br /><em>One small farm.</em>
+        Privacy <em>Policy</em>
       </h1>
       <p class="hero-sub reveal" style="transition-delay:.2s">
-        Long Branch Farms is a family operation in Grayson County, Kentucky, raising pasture-fed beef and pork for our neighbors across Western Central Kentucky.
+        We're a two-person farm. We collect as little as we can, we use it only to answer you, and we never sell it.
       </p>
     </div>
   </section>
 
-  <!-- Full Story -->
-  <section id="about-body">
-    <div class="about-copy">
-      <p class="section-label reveal" style="justify-content:center">Why We Started</p>
-      <p class="reveal" style="transition-delay:.05s">
-        Long Branch Farms was born out of a desire to provide our community with fresh, healthy, locally grown food. We wanted people in our area to know exactly what they're being fed and how it was raised, so they can trust what ends up on their table.
-      </p>
-      <p class="reveal" style="transition-delay:.1s">
-        We're two working parents raising a six-year-old, running this farm alongside our full-time jobs since 2022. It's a lot to take on, but we believe doing things the right way is always worth the extra effort.
-      </p>
-      <p class="reveal" style="transition-delay:.15s">
-        Everything we raise, we raise ourselves. Our pigs have access to pasture and woods and are fed milk from our own A2/A2 dairy cow, with feed we mix by hand every single day. Our beef is grass-finished from start to finish for a leaner, healthier cut. No antibiotics. No vaccines. No shortcuts. If we wouldn't feed it to our own family, it doesn't leave this farm.
-      </p>
-      <p class="reveal" style="transition-delay:.2s">
-        We proudly serve Western Central Kentucky and are a member of Kentucky Proud, the state's program for locally grown and raised food.
-      </p>
-    </div>
-  </section>
+  <!-- Policy -->
+  <section id="legal-body">
+    <div class="legal-copy">
+      <p class="section-label reveal" style="justify-content:center">Long Branch Farms</p>
+      <p class="legal-updated reveal" style="transition-delay:.05s">Last updated: September 4, 2026</p>
 
-  <!-- Gallery -->
-  <section id="about-gallery">
-    <div class="feature-grid">
-      <div class="fg-item fg-item-tall">
-        <img src="images/photo-17.jpeg" alt="Long Branch Farms pasture" loading="lazy" />
-        <span class="fg-caption">Open Pasture</span>
-      </div>
-      <div class="fg-item fg-item-wide fg-item-sm">
-        <img src="images/photo-10.jpeg" alt="Farm life at Long Branch Farms" loading="lazy" />
-        <span class="fg-caption">Daily Chores</span>
-      </div>
-      <div class="fg-item fg-item-sm">
-        <img src="images/photo-14.jpeg" alt="Long Branch Farms animals" loading="lazy" />
-        <span class="fg-caption">The Herd</span>
-      </div>
-      <div class="fg-item fg-item-sm">
-        <img src="images/photo-20.jpeg" alt="Long Branch Farms land" loading="lazy" />
-        <span class="fg-caption">Grayson County</span>
-      </div>
-    </div>
-    <div class="photo-strip" style="margin-top:6px;">
-      <div class="photo-strip-item">
-        <img src="images/photo-4.jpeg" alt="Farm photo" loading="lazy" />
-      </div>
-      <div class="photo-strip-item">
-        <img src="images/photo-16.jpeg" alt="Farm photo" loading="lazy" />
-      </div>
-      <div class="photo-strip-item">
-        <img src="images/photo-21.jpeg" alt="Farm photo" loading="lazy" />
-      </div>
-      <div class="photo-strip-item">
-        <img src="images/photo-23.jpeg" alt="Farm photo" loading="lazy" />
-      </div>
-    </div>
-  </section>
+      <p class="legal-intro reveal" style="transition-delay:.1s">
+        This page explains what happens to your information when you use this website or contact us. Long Branch Farms is a family farm at 120 Long Branch Drive, Leitchfield, KY 42754. Two of us run it. There's no marketing department here and no list we're building.
+      </p>
 
-  <!-- CTA -->
-  <section id="cta">
-    <div class="cta-bg" style="background-image:url('images/photo-18.jpeg');"></div>
-    <div class="cta-overlay"></div>
-    <div class="cta-content">
-      <h2 class="reveal">Taste the <em>difference</em><br />real care makes.</h2>
-      <p class="reveal" style="transition-delay:.1s">Bulk orders, bundle boxes, and individual cuts available. Inventory is limited and moves fast.</p>
-      <div class="cta-btns reveal" style="transition-delay:.18s">
-        <a href="index.html#products" class="btn-primary">Shop Our Cuts</a>
-        <a href="contact.html" class="btn-ghost">Ask a Question</a>
+      <h2>What we collect</h2>
+      <p>
+        The only information this website collects is what you type into our contact form:
+      </p>
+      <ul>
+        <li>Your name</li>
+        <li>Your email address</li>
+        <li>Your phone number, if you choose to give it &mdash; that field is optional</li>
+        <li>What you're interested in (beef, pork, bundles, eggs, or a general question)</li>
+        <li>Your message</li>
+      </ul>
+      <p>
+        That's the whole list. We don't ask for a mailing address, a birthday, or payment details on this site, and there's no account to create.
+      </p>
+
+      <h2>How the contact form works</h2>
+      <p>
+        Our contact form is handled by <a href="https://web3forms.com" target="_blank" rel="noopener">Web3Forms</a>, a third-party service that takes your submission and relays it to our farm email inbox. Your message passes through their systems on the way to us. You can read how they handle it in the <a href="https://web3forms.com/privacy" target="_blank" rel="noopener">Web3Forms privacy policy</a>.
+      </p>
+      <p>
+        Once it reaches us, your message sits in our email account like any other email. We read it, we reply, and we keep it as long as it's useful for serving you &mdash; so we can look up your last order when you come back next season, for instance. If you'd rather we didn't keep it, say so and we'll delete it.
+      </p>
+
+      <h2>Cookies and tracking</h2>
+      <p>
+        This site sets no cookies. There's no analytics software, no advertising pixel, and no tracking of any kind. We don't know who visits this site or how often.
+      </p>
+      <p>
+        There is one outside request every page makes: it loads its typefaces from Google Fonts (<code>fonts.googleapis.com</code> and <code>fonts.gstatic.com</code>). To send those font files to your browser, Google receives your IP address. We never see it, and Google tells us nothing about your visit. We mention it because it's the only third-party connection on the site.
+      </p>
+
+      <h2>Who we share it with</h2>
+      <p>
+        We do not sell, rent, or trade your contact information. We don't hand it to marketers, data brokers, or anyone else looking for a list.
+      </p>
+      <p>
+        The only time your information goes anywhere is when it's needed to get you your order &mdash; giving your name to the licensed processor handling your bulk beef or pork, for example, or confirming a delivery time. We would also turn over information if the law required it.
+      </p>
+
+      <h2>Seeing or deleting your information</h2>
+      <p>
+        Ask and we'll tell you what we have, or delete it. Text is the fastest way to reach us:
+      </p>
+      <ul>
+        <li>Text or call <a href="tel:+12702302339">(270) 230-2339</a></li>
+        <li>Email <a href="mailto:longbranchfarmsky@gmail.com">longbranchfarmsky@gmail.com</a></li>
+      </ul>
+      <p>
+        We handle these ourselves, usually within a few days. Deleting your information means we lose the record of what you've ordered before, so let us know if that matters to you.
+      </p>
+
+      <h2>Children</h2>
+      <p>
+        This site is meant for people buying food for their households. It is not directed at children under 13, and we don't knowingly collect information from them. If you believe a child has sent us something through the form, contact us and we'll delete it.
+      </p>
+
+      <h2>Keeping it safe</h2>
+      <p>
+        Your messages live in a password-protected email account and nowhere else. We can't promise email is perfectly secure &mdash; nobody honestly can &mdash; so please don't send anything sensitive like card numbers or account details through the form.
+      </p>
+
+      <h2>Changes to this policy</h2>
+      <p>
+        If we change how the site or the form works, we'll update this page and change the date at the top. There's no mailing list to notify you with, so if this matters to you, check back now and then.
+      </p>
+
+      <div class="legal-note">
+        <p>
+          Questions about any of this? Text <a href="tel:+12702302339">(270) 230-2339</a> or email <a href="mailto:longbranchfarmsky@gmail.com">longbranchfarmsky@gmail.com</a>. You'll be talking to one of the two people who run the farm.
+        </p>
       </div>
     </div>
   </section>

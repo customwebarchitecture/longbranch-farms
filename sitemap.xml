@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Long Branch Farms sitemap.
+
+  Adding a new page? Copy one <url> block below, change the <loc> to the new
+  page's full address, and set <lastmod> to the date you added it.
+  <lastmod> must be written as YYYY-MM-DD (W3C date format).
+  <priority> runs from 0.0 to 1.0 and says how important a page is
+  relative to the others on this site.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Home page: also holds the beef, pork, and bundle listings. -->
+  <url>
+    <loc>https://www.longbranch-farms.com/</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Contact: where an order or an inquiry actually starts. -->
+  <url>
+    <loc>https://www.longbranch-farms.com/contact.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- About: the farm's story. -->
+  <url>
+    <loc>https://www.longbranch-farms.com/about.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Legal pages: real pages, worth indexing, but rarely what anyone searches for. -->
+  <url>
+    <loc>https://www.longbranch-farms.com/privacy.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+
+  <url>
+    <loc>https://www.longbranch-farms.com/terms.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+
+</urlset>
