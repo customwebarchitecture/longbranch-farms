@@ -1,0 +1,7 @@
+# robots.txt for Long Branch Farms
+# Everything on this site is meant to be found. Nothing is disallowed.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.longbranch-farms.com/sitemap.xml
