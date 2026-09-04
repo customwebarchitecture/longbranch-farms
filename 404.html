@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="The page you requested could not be found on the Long Branch Farms website." />
+  <meta name="robots" content="noindex, follow" />
+  <meta name="theme-color" content="#1a1208" />
+  <title>Page Not Found | Long Branch Farms</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+  <style>
+    body { background: var(--soil); }
+    .error-page {
+      min-height: 100svh;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+      align-items: center;
+      gap: clamp(2rem, 6vw, 6rem);
+      padding: clamp(8rem, 13vw, 11rem) var(--side) clamp(4rem, 8vw, 7rem);
+      background:
+        radial-gradient(circle at 15% 20%, rgba(196,164,90,0.12), transparent 30%),
+        var(--soil);
+    }
+    .error-art img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid rgba(196,164,90,0.2);
+      box-shadow: 0 2rem 5rem rgba(0,0,0,0.32);
+    }
+    .error-copy { max-width: 34rem; }
+    .error-code {
+      color: var(--hay);
+      font-size: 0.72rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+    .error-copy h1 {
+      color: var(--cream);
+      font-family: var(--serif);
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      font-weight: 400;
+      line-height: 1.02;
+      margin-bottom: 1.5rem;
+    }
+    .error-copy h1 em { color: var(--hay); font-weight: 400; }
+    .error-copy > p:not(.error-code) {
+      color: rgba(245,240,232,0.68);
+      line-height: 1.8;
+      margin-bottom: 2rem;
+      max-width: 46ch;
+    }
+    .error-actions { display: flex; flex-wrap: wrap; gap: 1rem; }
+    @media (max-width: 820px) {
+      .error-page { grid-template-columns: 1fr; }
+      .error-art { order: -1; padding-top: 1rem; }
+      .error-art img { max-height: 42vh; object-fit: cover; }
+    }
+  </style>
+</head>
+<body>
+  <header id="site-header" class="scrolled">
+    <a href="/" class="logo-wrap">
+      <img src="/images/LBF-logo-transparent.png" alt="Long Branch Farms Logo" />
+      <span class="logo-name">Long Branch Farms<small>Grayson County, KY</small></span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="/about/">About</a>
+      <a href="/#products">Shop</a>
+      <a href="/contact/">Contact</a>
+      <a href="/#products" class="nav-cta">Order Now</a>
+    </nav>
+  </header>
+
+  <main class="error-page">
+    <div class="error-copy">
+      <p class="error-code">Error 404</p>
+      <h1>This trail led<br /><em>off the farm.</em></h1>
+      <p>The page may have moved, or the address may be mistyped. Head home to browse our pasture-raised beef and pork, or get in touch and we’ll point you in the right direction.</p>
+      <div class="error-actions">
+        <a href="/" class="btn-primary">Return Home</a>
+        <a href="/contact/" class="btn-ghost">Contact Us</a>
+      </div>
+    </div>
+    <div class="error-art">
+      <img src="/images/404.svg" alt="Long Branch Farms 404 illustration" />
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-bottom">
+        <div class="footer-meta">
+          <p class="footer-copy">&copy; <span id="yr"></span> Long Branch Farms. All rights reserved.</p>
+          <p class="site-credit">Website by <a href="mailto:me@caseykeown.com">Twin Lakes Web Co.</a></p>
+        </div>
+        <div class="footer-legal">
+          <a href="/privacy/">Privacy</a>
+          <a href="/terms/">Terms</a>
+          <a href="/contact/">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>

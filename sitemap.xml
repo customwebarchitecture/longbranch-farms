@@ -20,7 +20,7 @@
 
   <!-- Contact: where an order or an inquiry actually starts. -->
   <url>
-    <loc>https://www.longbranch-farms.com/contact.html</loc>
+    <loc>https://www.longbranch-farms.com/contact/</loc>
     <lastmod>2026-09-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
@@ -28,7 +28,7 @@
 
   <!-- About: the farm's story. -->
   <url>
-    <loc>https://www.longbranch-farms.com/about.html</loc>
+    <loc>https://www.longbranch-farms.com/about/</loc>
     <lastmod>2026-09-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
@@ -36,14 +36,14 @@
 
   <!-- Legal pages: real pages, worth indexing, but rarely what anyone searches for. -->
   <url>
-    <loc>https://www.longbranch-farms.com/privacy.html</loc>
+    <loc>https://www.longbranch-farms.com/privacy/</loc>
     <lastmod>2026-09-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
 
   <url>
-    <loc>https://www.longbranch-farms.com/terms.html</loc>
+    <loc>https://www.longbranch-farms.com/terms/</loc>
     <lastmod>2026-09-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>

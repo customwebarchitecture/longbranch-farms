@@ -13,10 +13,10 @@ const SITE = 'https://www.longbranch-farms.com';
 
 const PAGES = [
   { path: '/index.html', canonical: SITE + '/', title: 'Long Branch Farms | Grayson County, KY' },
-  { path: '/about.html', canonical: SITE + '/about.html', title: 'About Us | Long Branch Farms' },
-  { path: '/contact.html', canonical: SITE + '/contact.html', title: 'Contact Us | Long Branch Farms' },
-  { path: '/privacy.html', canonical: SITE + '/privacy.html', title: 'Privacy Policy | Long Branch Farms' },
-  { path: '/terms.html', canonical: SITE + '/terms.html', title: 'Terms of Sale | Long Branch Farms' }
+  { path: '/about/', canonical: SITE + '/about/', title: 'About Us | Long Branch Farms' },
+  { path: '/contact/', canonical: SITE + '/contact/', title: 'Contact Us | Long Branch Farms' },
+  { path: '/privacy/', canonical: SITE + '/privacy/', title: 'Privacy Policy | Long Branch Farms' },
+  { path: '/terms/', canonical: SITE + '/terms/', title: 'Terms of Sale | Long Branch Farms' }
 ];
 
 const REQUIRED_META = [
@@ -286,7 +286,7 @@ for (const page of PAGES) {
   }
 
   if (page.path === '/index.html') checkIndexLd(h);
-  if (page.path === '/contact.html') checkContactLd(h);
+  if (page.path === '/contact/') checkContactLd(h);
 }
 
 // The bare "/" route and the automatic /favicon.ico request browsers make.
