@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Terms of sale for Long Branch Farms: how pricing, bulk orders, seasonal availability, delivery, payment, and perishable handling work when you buy beef, pork, or eggs from us." />
+  <title>Terms of Sale | Long Branch Farms</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    #legal-hero {
+      position: relative;
+      min-height: 42vh;
+      display: grid;
+      place-items: end;
+      overflow: hidden;
+    }
+    #legal-hero .hero-content { padding-top: 8rem; padding-bottom: 3.5rem; }
+    #legal-hero .hero-headline {
+      font-size: clamp(2.2rem, 4.6vw, 3.6rem);
+      max-width: 20ch;
+      margin-bottom: 1.1rem;
+    }
+    #legal-hero .hero-sub { margin-bottom: 0; }
+
+    #legal-body {
+      padding: clamp(4rem, 9vw, 7rem) var(--side) clamp(5rem, 10vw, 8rem);
+      background: var(--cream);
+    }
+    .legal-copy {
+      max-width: 62ch;
+      margin: 0 auto;
+    }
+    .legal-copy .section-label {
+      font-size: 0.65rem;
+      color: var(--hay);
+      justify-content: center;
+    }
+    .legal-copy .section-label::after { flex: none; width: 3rem; }
+    .legal-copy .legal-updated {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ink-fade);
+      margin-bottom: 2.75rem;
+    }
+    .legal-copy h2 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(1.4rem, 2.6vw, 1.95rem);
+      line-height: 1.25;
+      color: var(--bark);
+      margin: 3.25rem 0 1rem;
+    }
+    .legal-copy h3 {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      color: var(--moss);
+      margin: 2rem 0 0.6rem;
+    }
+    .legal-copy p,
+    .legal-copy li {
+      font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+      color: var(--bark);
+      line-height: 1.9;
+    }
+    .legal-copy p { margin-bottom: 1.3rem; }
+    .legal-copy ul,
+    .legal-copy ol {
+      margin: 0 0 1.5rem;
+      padding-left: 1.35rem;
+    }
+    .legal-copy li { margin-bottom: 0.55rem; }
+    .legal-copy li::marker { color: var(--hay); }
+    .legal-copy a {
+      color: var(--moss);
+      text-decoration: underline;
+      text-underline-offset: 0.2em;
+      text-decoration-thickness: 1px;
+      transition: color var(--dur) var(--ease);
+    }
+    .legal-copy a:hover { color: var(--moss-lt); }
+    .legal-copy .legal-intro {
+      font-size: clamp(1.02rem, 1.4vw, 1.15rem);
+      color: var(--soil);
+    }
+    .legal-note {
+      margin-top: 3.25rem;
+      padding: 1.6rem 1.75rem;
+      background: var(--cream-dk);
+      border-left: 2px solid var(--hay);
+    }
+    .legal-note p { margin-bottom: 0; }
+
+    @media (max-width: 960px) {
+      #legal-hero { min-height: 40vh; }
+      #legal-hero .hero-content { padding-top: 7.5rem; padding-bottom: 3rem; }
+    }
+    @media (max-width: 660px) {
+      #legal-hero { min-height: 46vh; }
+      #legal-hero .hero-content { padding-top: 7rem; padding-bottom: 2.5rem; }
+      .legal-copy h2 { margin-top: 2.5rem; }
+      .legal-note { padding: 1.25rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header id="site-header">
+    <a href="index.html" class="logo-wrap">
+      <img src="images/LBF-logo-transparent.png" alt="Long Branch Farms Logo" />
+      <span class="logo-name">
+        Long Branch Farms
+        <small>Grayson County, KY</small>
+      </span>
+    </a>
+    <nav>
+      <a href="about.html">About</a>
+      <a href="index.html#products">Shop</a>
+      <a href="contact.html">Contact</a>
+      <a href="index.html#products" class="nav-cta">Order Now</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section id="legal-hero">
+    <div class="hero-bg loaded" style="background-image:url('images/photo-22.jpeg');"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow reveal">Legal</p>
+      <h1 class="hero-headline reveal" style="transition-delay:.1s">
+        Terms of <em>Sale</em>
+      </h1>
+      <p class="hero-sub reveal" style="transition-delay:.2s">
+        How ordering actually works here: what the prices mean, what we can promise, and what we can't.
+      </p>
+    </div>
+  </section>
+
+  <!-- Terms -->
+  <section id="legal-body">
+    <div class="legal-copy">
+      <p class="section-label reveal" style="justify-content:center">Long Branch Farms</p>
+      <p class="legal-updated reveal" style="transition-delay:.05s">Last updated: September 4, 2026</p>
+
+      <p class="legal-intro reveal" style="transition-delay:.1s">
+        These terms cover buying beef, pork, and eggs from Long Branch Farms, 120 Long Branch Drive, Leitchfield, KY 42754. We've kept them short and in plain English, because you should be able to read them before you order.
+      </p>
+
+      <h2>Ordering</h2>
+      <p>
+        There is no checkout on this website. Nothing you do here charges you or reserves anything. Sending the contact form is an inquiry &mdash; it starts a conversation, it isn't a purchase.
+      </p>
+      <p>
+        <strong>No order is binding until we confirm it with you directly</strong> by text, phone call, or email. That confirmation is where we settle what you're getting, what it costs, and when and where you'll get it. Texting is the fastest way to reach us.
+      </p>
+
+      <h2>Prices</h2>
+      <p>
+        The prices on this site are our current prices. As of today those are:
+      </p>
+      <h3>Beef</h3>
+      <ul>
+        <li>Ribeye &mdash; $22/lb</li>
+        <li>T-Bone &mdash; $18/lb</li>
+        <li>Ground Beef &mdash; $8.50/lb</li>
+        <li>Bulk Beef &mdash; from $4/lb</li>
+      </ul>
+      <h3>Pork</h3>
+      <ul>
+        <li>Bacon &mdash; $8/lb</li>
+        <li>Boston Butt &mdash; $8.50/lb</li>
+        <li>Pork Chops &mdash; $8.50/lb</li>
+        <li>Breakfast Sausage &mdash; $6/lb</li>
+        <li>Ribs &mdash; $8/lb</li>
+        <li>Ham Steak &mdash; $8/lb</li>
+        <li>Shoulder Steak &mdash; $8/lb</li>
+        <li>Tenderloin &mdash; $9/lb</li>
+        <li>Lard &mdash; $3/lb</li>
+      </ul>
+      <h3>Bundles and eggs</h3>
+      <ul>
+        <li>Bulk Pork &mdash; $4/lb</li>
+        <li>Pork Bundle Box (10 lbs) &mdash; $80</li>
+        <li>Breakfast Bundle Box &mdash; $35</li>
+        <li>Eggs &mdash; $3/dozen</li>
+      </ul>
+      <p>
+        Prices can change. Feed costs, processing costs, and what we actually have on hand all move, and this page and the shop page may not update the same day. The price we confirm with you when we take your order is the price you pay.
+      </p>
+
+      <h3>What's included</h3>
+      <ul>
+        <li>Bulk beef and bulk pork pricing <strong>includes the processing fee</strong>. You don't get a second bill from the processor.</li>
+        <li>The Pork Bundle Box <strong>includes delivery</strong>.</li>
+      </ul>
+
+      <h3>How bulk orders are weighed</h3>
+      <p>
+        Bulk beef and pork are sold by the pound, so the final total depends on the animal. We'll tell you at order time whether we're pricing on hanging weight or packaged weight, and roughly what range to expect. That per-pound figure is final once the weight is confirmed. No animal comes out to an exact number, so treat any estimate we give you beforehand as an estimate.
+      </p>
+
+      <h2>Availability</h2>
+      <p>
+        We raise everything we sell, so what we have depends on what's been raised and processed. Inventory is seasonal and limited. Something listed on this site may be sold out or not available at all right now, and that's the normal rhythm of a small farm, not a mistake on the page. If we can't fill your order, we'll tell you and either give you a timeline or refund anything you've already paid.
+      </p>
+      <p>
+        We hope to add chicken down the road. We aren't taking orders for it yet.
+      </p>
+
+      <h2>Delivery and pickup</h2>
+      <p>
+        We serve Western Central Kentucky. Delivery and farm pickup are arranged with you directly when we confirm the order &mdash; there's no shipping option and we don't ship out of the area. Freezer space matters here: for a bulk order, make sure you have room before we set a date.
+      </p>
+
+      <h2>Payment</h2>
+      <p>
+        Payment is arranged directly with us. This website processes no payments and stores no payment information &mdash; there's no card field anywhere on it. We'll agree on the method when we confirm your order, and a bulk order may require a deposit, which we'll say up front.
+      </p>
+
+      <h2>Perishable food</h2>
+      <p>
+        This is fresh and frozen meat. Once we hand it to you at the agreed time and place, keeping it cold is up to you &mdash; get it into a refrigerator or freezer promptly. Please be there at the time we agree on, or send someone who can be.
+      </p>
+      <p>
+        Because it's perishable, we can't take returns on meat once it has left our custody. The exception matters: if something was misrepresented, damaged, or isn't what we said it was, <strong>contact us right away</strong> &mdash; that same day if you can &mdash; and we'll make it right. We'd rather hear about it than have you eat something you're unhappy with.
+      </p>
+
+      <h2>How we raise it</h2>
+      <p>
+        These describe our own practices on our own farm:
+      </p>
+      <ul>
+        <li>We raise our animals without antibiotics, vaccines, or added hormones.</li>
+        <li>Our pigs have access to pasture and woods, and eat feed we mix by hand every day, supplemented with milk from our own A2/A2 dairy cow.</li>
+        <li>Our beef is grass-finished.</li>
+        <li>Processing is done by a licensed processor.</li>
+      </ul>
+      <p>
+        We are not USDA-certified organic and we don't claim to be. Certification is a separate program with its own paperwork and inspections, and we haven't gone through it. What we're telling you is how we farm. Come look, or ask us anything about it.
+      </p>
+
+      <h2>Website content</h2>
+      <p>
+        We keep this site accurate, but prices, photos, and product lists can fall behind what's in the freezer. Photos show our farm and our animals; they're not a promise of the exact cut you'll receive. When the site and what we tell you directly disagree, what we tell you directly is right.
+      </p>
+
+      <h2>Governing law</h2>
+      <p>
+        These terms are governed by the laws of the Commonwealth of Kentucky.
+      </p>
+
+      <h2>Changes to these terms</h2>
+      <p>
+        We may update this page. The terms that apply to your order are the ones posted when we confirmed it. The date at the top tells you when we last made a change.
+      </p>
+
+      <div class="legal-note">
+        <p>
+          Questions before you order? Text or call <a href="tel:+12702302339">(270) 230-2339</a>, or email <a href="mailto:longbranchfarmsky@gmail.com">longbranchfarmsky@gmail.com</a>. Text gets the fastest answer. See also our <a href="privacy.html">privacy policy</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="images/LBF-logo-transparent.png" alt="Long Branch Farms" />
+          <p>Pasture-raised beef and pork grown naturally in Grayson County, Kentucky by a family that cares about what's on your table.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <a href="about.html">About Us</a>
+          <a href="index.html#products">Shop</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Products</h4>
+          <a href="index.html#products">Beef Cuts</a>
+          <a href="index.html#products">Pork Cuts</a>
+          <a href="index.html#products">Bundles &amp; Bulk</a>
+          <a href="index.html#products">Eggs</a>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <p>120 Long Branch Drive<br />Leitchfield, KY 42754</p>
+          <a href="mailto:longbranchfarmsky@gmail.com">longbranchfarmsky@gmail.com</a>
+          <a href="https://www.kyproud.com/members/long-branch-farms" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:0.75rem;">
+            🌿 Kentucky Proud Member
+          </a>
+          <div class="social-row">
+            <a href="https://www.facebook.com/profile.php?id=61573708114780" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="rgba(245,240,232,0.55)" stroke-width="1.5"/><circle cx="12" cy="12" r="4" fill="none" stroke="rgba(245,240,232,0.55)" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="rgba(245,240,232,0.55)"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; <span id="yr"></span> Long Branch Farms. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    const hdr = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      hdr.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
+
+</body>
+</html>
