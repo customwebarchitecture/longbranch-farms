@@ -150,3 +150,51 @@ parsing and carrying the expected (and only the expected) properties.
 npx http-server . -p 8103 -s &
 node tools/check-metadata.mjs http://localhost:8103
 ```
+
+## Previewing the site locally
+
+`dev-server.mjs` is a tiny local web server with no dependencies. Unlike
+`npx http-server`, it serves this site's clean routes and its 404 page the
+same way a real static host does: a request for `/about/` serves
+`about/index.html`, and a made-up address gets this site's own `404.html`
+back with a real 404 status, instead of a generic directory listing or a
+plain "Cannot GET" error.
+
+```sh
+node tools/dev-server.mjs
+# then open http://localhost:8080
+```
+
+Pass a port number to use a different one: `node tools/dev-server.mjs 5050`.
+
+## Full site check (`e2e-check.mjs`)
+
+`e2e-check.mjs` is the most thorough check in this folder. It starts
+`dev-server.mjs` itself and drives a real browser (via Playwright) through
+every page, at both a phone size and a desktop size, checking:
+
+- the page loads with no failed network requests and no console errors
+- every link on the page actually goes somewhere
+- the four old addresses (`about.html`, `contact.html`, `privacy.html`,
+  `terms.html`) still send a visitor on to the new clean route
+- a made-up address gets the real 404 page, with an HTTP 404 status
+- every photo has real, descriptive alt text (not "Farm photo" or blank)
+- nothing overflows sideways on a phone screen
+- the mobile menu opens, keeps keyboard focus inside itself, and closes
+- the page stays readable with the "reduce motion" accessibility setting on
+- `sitemap.xml` and `robots.txt` agree with what pages actually exist
+
+Run it after making any change to the HTML, the CSS, or anything under
+`images/`:
+
+```sh
+npm install -D playwright   # only needed the first time
+npx playwright install chromium
+node tools/e2e-check.mjs
+```
+
+If Playwright is already installed somewhere on the machine (globally, or in
+another project), the script finds it on its own and the two setup lines
+above can be skipped. It prints one line per check and a pass/fail count at
+the end, and saves a screenshot of every page to `tools/.e2e-shots/` (not
+committed) so a failure can be looked at, not just read about.
