@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact Long Branch Farms in Leitchfield, Kentucky. Text (270) 230-2339 for the fastest answer, or send us a message about beef, pork, bundle boxes, and eggs." />
+  <title>Contact Us | Long Branch Farms</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    #contact-hero {
+      position: relative;
+      min-height: 52vh;
+      display: grid;
+      place-items: end;
+      overflow: hidden;
+    }
+    #contact-hero .hero-content { padding-bottom: 4rem; }
+    #contact-hero .hero-headline { font-size: clamp(2.4rem, 5.5vw, 4.5rem); max-width: 18ch; }
+
+    #contact-body {
+      padding: clamp(4rem, 9vw, 7rem) var(--side);
+      background: var(--cream);
+    }
+    .contact-grid {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: clamp(2.5rem, 6vw, 5rem);
+      align-items: start;
+    }
+
+    /* ── FORM ──────────────────────────────────────────────────── */
+    .contact-form-wrap {
+      background: var(--white);
+      border: 1px solid rgba(26,18,8,0.09);
+      padding: clamp(1.75rem, 4vw, 3rem);
+    }
+    .contact-form-wrap h2 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      line-height: 1.15;
+      margin-bottom: 0.85rem;
+    }
+    .contact-form-wrap h2 em { font-style: italic; color: var(--moss-lt); }
+    .contact-form-intro {
+      font-size: 0.95rem;
+      color: #4a3a22;
+      line-height: 1.8;
+      max-width: 46ch;
+      margin-bottom: 2.2rem;
+    }
+
+    .contact-form { display: grid; gap: 1.35rem; }
+    .contact-form[hidden] { display: none; }
+    .field-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.35rem;
+    }
+    .field { display: flex; flex-direction: column; }
+    .field label {
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--bark);
+      font-weight: 500;
+      margin-bottom: 0.55rem;
+    }
+    .field .optional {
+      letter-spacing: 0.08em;
+      text-transform: none;
+      font-weight: 300;
+      color: var(--ink-fade);
+    }
+    .field input,
+    .field select,
+    .field textarea {
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: 0.95rem;
+      color: var(--soil);
+      background: var(--cream);
+      border: 1px solid rgba(26,18,8,0.18);
+      border-radius: 0;
+      padding: 0.8rem 0.95rem;
+      width: 100%;
+      transition: border-color var(--dur) var(--ease), background var(--dur) var(--ease);
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    .field select {
+      background-image: linear-gradient(45deg, transparent 50%, var(--bark) 50%), linear-gradient(135deg, var(--bark) 50%, transparent 50%);
+      background-position: calc(100% - 1.15rem) 1.15rem, calc(100% - 0.8rem) 1.15rem;
+      background-size: 6px 6px, 6px 6px;
+      background-repeat: no-repeat;
+      padding-right: 2.5rem;
+    }
+    .field textarea { min-height: 150px; resize: vertical; line-height: 1.7; }
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      outline: none;
+      border-color: var(--moss-lt);
+      background: var(--white);
+      box-shadow: 0 0 0 2px rgba(90,112,72,0.18);
+    }
+    .field input[aria-invalid="true"],
+    .field textarea[aria-invalid="true"] {
+      border-color: #9c3a1e;
+      box-shadow: 0 0 0 2px rgba(156,58,30,0.14);
+    }
+    .field-error {
+      font-size: 0.78rem;
+      color: #9c3a1e;
+      margin-top: 0.4rem;
+      min-height: 0;
+    }
+    .field-error:empty { display: none; }
+
+    .contact-form button[type="submit"] {
+      justify-self: start;
+      cursor: pointer;
+      font-family: var(--sans);
+      line-height: 1.2;
+      border-radius: 0;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    .contact-form button[type="submit"][disabled] {
+      opacity: 0.6;
+      cursor: progress;
+    }
+    .form-fineprint {
+      font-size: 0.8rem;
+      color: var(--ink-fade);
+      line-height: 1.7;
+      margin-top: -0.4rem;
+    }
+
+    /* ── RESULT PANELS ─────────────────────────────────────────── */
+    .form-result {
+      border-left: 3px solid var(--moss-lt);
+      background: var(--cream);
+      padding: clamp(1.5rem, 3vw, 2.25rem);
+    }
+    .form-result.is-error { border-left-color: #9c3a1e; }
+    .form-result h3 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+      margin-bottom: 0.75rem;
+    }
+    .form-result p {
+      font-size: 0.95rem;
+      color: #4a3a22;
+      line-height: 1.8;
+      margin-bottom: 0.9rem;
+    }
+    .form-result p:last-child { margin-bottom: 0; }
+    .form-result a {
+      color: var(--moss);
+      font-weight: 400;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .form-result a:hover { color: var(--moss-lt); }
+
+    /* ── DETAILS COLUMN ────────────────────────────────────────── */
+    .contact-details { position: sticky; top: 6.5rem; }
+    .contact-details h2 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+    .detail-block {
+      padding: 1.35rem 0;
+      border-top: 1px solid rgba(26,18,8,0.12);
+    }
+    .detail-block:last-of-type { border-bottom: 1px solid rgba(26,18,8,0.12); }
+    .detail-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--moss);
+      margin-bottom: 0.5rem;
+    }
+    .detail-value {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      line-height: 1.5;
+      color: var(--soil);
+    }
+    .detail-value a {
+      color: var(--soil);
+      text-decoration: none;
+      border-bottom: 1px solid var(--hay);
+      transition: color var(--dur) var(--ease);
+    }
+    .detail-value a:hover { color: var(--moss); }
+    .detail-note {
+      font-size: 0.85rem;
+      color: #4a3a22;
+      line-height: 1.7;
+      margin-top: 0.45rem;
+    }
+    .detail-flag {
+      display: inline-block;
+      margin-top: 0.6rem;
+      background: var(--moss);
+      color: var(--cream);
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.7rem;
+    }
+    .detail-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem 1.4rem;
+      margin-top: 1.4rem;
+    }
+    .detail-links a {
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--moss);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(59,74,47,0.35);
+      padding-bottom: 2px;
+      transition: color var(--dur) var(--ease), border-color var(--dur) var(--ease);
+    }
+    .detail-links a:hover { color: var(--soil); border-bottom-color: var(--hay); }
+
+    @media (max-width: 960px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      .contact-details { position: static; order: -1; }
+    }
+    @media (max-width: 660px) {
+      .field-row { grid-template-columns: 1fr; }
+      .contact-form button[type="submit"] { justify-self: stretch; text-align: center; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header id="site-header">
+    <a href="index.html" class="logo-wrap">
+      <img src="images/LBF-logo-transparent.png" alt="Long Branch Farms Logo" />
+      <span class="logo-name">
+        Long Branch Farms
+        <small>Grayson County, KY</small>
+      </span>
+    </a>
+    <nav>
+      <a href="about.html">About</a>
+      <a href="index.html#products">Shop</a>
+      <a href="contact.html">Contact</a>
+      <a href="index.html#products" class="nav-cta">Order Now</a>
+    </nav>
+  </header>
+
+  <!-- Contact Hero -->
+  <section id="contact-hero">
+    <div class="hero-bg loaded" style="background-image:url('images/photo-25.jpeg');"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow reveal">Get In Touch</p>
+      <h1 class="hero-headline reveal" style="transition-delay:.1s">
+        Questions? <em>Text us.</em>
+      </h1>
+      <p class="hero-sub reveal" style="transition-delay:.2s">
+        We're a two-person farm with full-time jobs, so a text gets you an answer fastest. You can also send a message below and we'll get back to you.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Body -->
+  <section id="contact-body">
+    <div class="contact-grid">
+
+      <!-- Form -->
+      <div class="contact-form-wrap reveal">
+        <div id="cf-intro">
+          <p class="section-label">Send a Message</p>
+          <h2>Tell us what you're <em>after.</em></h2>
+          <p class="contact-form-intro">
+            Bulk beef, a bundle box, a few pork chops, or just a question about how we raise things. Fill this out and we'll answer. If you need an answer today, text the number to the right.
+          </p>
+        </div>
+
+        <!--
+          Web3Forms access key. Public by design: it is a routing identifier,
+          not a credential, and only relays submissions to
+          longbranchfarmsky@gmail.com. Manage it at web3forms.com.
+        -->
+        <form
+          id="contact-form"
+          class="contact-form"
+          action="https://api.web3forms.com/submit"
+          method="POST"
+        >
+          <input type="hidden" name="access_key" value="ba7f2a00-4e1f-42b2-8d2c-928367710458" />
+          <input type="hidden" name="subject" value="New contact form submission from longbranch-farms.com" />
+          <input type="hidden" name="from_name" value="Long Branch Farms Website" />
+          <!--
+            Only reached if JavaScript fails: the form then posts natively and
+            Web3Forms shows its own generic thank-you page. Once the live domain
+            is decided, uncomment this and set the URL to bring visitors back:
+            <input type="hidden" name="redirect" value="https://YOUR-DOMAIN/contact.html" />
+          -->
+          <!-- Honeypot: Web3Forms discards any submission where this is checked. -->
+          <input type="checkbox" name="botcheck" class="hidden" style="display:none;" tabindex="-1" autocomplete="off" />
+
+          <div class="field-row">
+            <div class="field">
+              <label for="cf-name">Name</label>
+              <input type="text" id="cf-name" name="name" autocomplete="name" required
+                     aria-describedby="cf-name-error" />
+              <p class="field-error" id="cf-name-error"></p>
+            </div>
+            <div class="field">
+              <label for="cf-email">Email</label>
+              <input type="email" id="cf-email" name="email" autocomplete="email" required
+                     aria-describedby="cf-email-error" />
+              <p class="field-error" id="cf-email-error"></p>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="cf-phone">Phone <span class="optional">(optional)</span></label>
+              <input type="tel" id="cf-phone" name="phone" autocomplete="tel"
+                     aria-describedby="cf-phone-error" />
+              <p class="field-error" id="cf-phone-error"></p>
+            </div>
+            <div class="field">
+              <label for="cf-interest">What are you interested in?</label>
+              <select id="cf-interest" name="interest">
+                <option value="General question">General question</option>
+                <option value="Bulk beef">Bulk beef</option>
+                <option value="Bulk pork">Bulk pork</option>
+                <option value="Bundle boxes">Bundle boxes</option>
+                <option value="Individual cuts">Individual cuts</option>
+                <option value="Eggs">Eggs</option>
+                <option value="Something else">Something else</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" name="message" required
+                      aria-describedby="cf-message-error"></textarea>
+            <p class="field-error" id="cf-message-error"></p>
+          </div>
+
+          <p class="form-fineprint">
+            We read every message ourselves. Expect a reply within a day or two, sooner if you text.
+          </p>
+
+          <button type="submit" class="btn-primary" id="cf-submit">Send Message</button>
+        </form>
+
+        <!-- Success -->
+        <div class="form-result" id="cf-success" role="status" aria-live="polite" hidden>
+          <h3>Message sent. Thank you.</h3>
+          <p>
+            We got it, and we'll get back to you at the email you gave us. We're usually
+            in the barn or at work during the day, so give us a day or two.
+          </p>
+          <p>
+            Need an answer faster? Text us at
+            <a href="tel:+12702302339">(270) 230-2339</a> &mdash; that's the quickest way to reach us.
+          </p>
+        </div>
+
+        <!-- Error -->
+        <div class="form-result is-error" id="cf-error" role="alert" aria-live="assertive" tabindex="-1" hidden>
+          <h3>That didn't go through.</h3>
+          <p>
+            Something on our end failed to send your message. Sorry about that. What you typed is
+            still in the form above, so you can try again &mdash; or reach us directly, which always works:
+          </p>
+          <p>
+            Text <a href="tel:+12702302339">(270) 230-2339</a><br />
+            Email <a href="mailto:longbranchfarmsky@gmail.com">longbranchfarmsky@gmail.com</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Details -->
+      <aside class="contact-details reveal" style="transition-delay:.1s">
+        <p class="section-label">The Farm</p>
+        <h2>Long Branch Farms</h2>
+
+        <div class="detail-block">
+          <p class="detail-label">Phone</p>
+          <p class="detail-value"><a href="tel:+12702302339">(270) 230-2339</a></p>
+          <span class="detail-flag">Text is best</span>
+          <p class="detail-note">
+            Texting is the best way to reach us. We both work full-time jobs on top of the farm,
+            so a text gets answered long before a voicemail does.
+          </p>
+        </div>
+
+        <div class="detail-block">
+          <p class="detail-label">Email</p>
+          <p class="detail-value"><a href="mailto:longbranchfarmsky@gmail.com">longbranchfarmsky@gmail.com</a></p>
+          <p class="detail-note">Good for bulk orders and anything with details worth writing down.</p>
+        </div>
+
+        <div class="detail-block">
+          <p class="detail-label">Farm Address</p>
+          <p class="detail-value">120 Long Branch Drive<br />Leitchfield, KY 42754</p>
+          <p class="detail-note">
+            Pickup is by arrangement only &mdash; message us first so someone's here to meet you.
+          </p>
+        </div>
+
+        <div class="detail-block">
+          <p class="detail-label">Service Area</p>
+          <p class="detail-value">Western Central Kentucky</p>
+          <p class="detail-note">
+            A family farm since 2022: two working parents, a six-year-old, and every animal known by name.
+          </p>
+        </div>
+
+        <div class="detail-links">
+          <a href="https://www.facebook.com/profile.php?id=61573708114780" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://www.kyproud.com/members/long-branch-farms" target="_blank" rel="noopener">Kentucky Proud Member</a>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta">
+    <div class="cta-bg" style="background-image:url('images/photo-22.jpeg');"></div>
+    <div class="cta-overlay"></div>
+    <div class="cta-content">
+      <h2 class="reveal">Know what you <em>want</em><br />already?</h2>
+      <p class="reveal" style="transition-delay:.1s">Bulk orders, bundle boxes, and individual cuts available. Inventory is limited and moves fast.</p>
+      <div class="cta-btns reveal" style="transition-delay:.18s">
+        <a href="index.html#products" class="btn-primary">Shop Our Cuts</a>
+        <a href="about.html" class="btn-ghost">Our Story</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="images/LBF-logo-transparent.png" alt="Long Branch Farms" />
+          <p>Pasture-raised beef and pork grown naturally in Grayson County, Kentucky by a family that cares about what's on your table.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <a href="about.html">About Us</a>
+          <a href="index.html#products">Shop</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Products</h4>
+          <a href="index.html#products">Beef Cuts</a>
+          <a href="index.html#products">Pork Cuts</a>
+          <a href="index.html#products">Bundles &amp; Bulk</a>
+          <a href="index.html#products">Eggs</a>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <p>120 Long Branch Drive<br />Leitchfield, KY 42754</p>
+          <a href="mailto:longbranchfarmsky@gmail.com">longbranchfarmsky@gmail.com</a>
+          <a href="https://www.kyproud.com/members/long-branch-farms" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:0.75rem;">
+            🌿 Kentucky Proud Member
+          </a>
+          <div class="social-row">
+            <a href="https://www.facebook.com/profile.php?id=61573708114780" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="rgba(245,240,232,0.55)" stroke-width="1.5"/><circle cx="12" cy="12" r="4" fill="none" stroke="rgba(245,240,232,0.55)" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="rgba(245,240,232,0.55)"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; <span id="yr"></span> Long Branch Farms. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* ── CONTACT FORM ──────────────────────────────────────────── */
+    (function () {
+      const form    = document.getElementById('contact-form');
+      if (!form) return;
+      const btn     = document.getElementById('cf-submit');
+      const okPanel = document.getElementById('cf-success');
+      const errPanel= document.getElementById('cf-error');
+      const btnLabel = btn.textContent;
+
+      // Suppress native validation bubbles only now that JS is confirmed
+      // running and will show the inline errors instead. Leaving `novalidate`
+      // out of the markup means the browser still enforces `required` on the
+      // no-JS native POST fallback.
+      form.setAttribute('novalidate', '');
+
+      const RULES = [
+        { id: 'cf-name',    msg: 'Please tell us your name.' },
+        { id: 'cf-email',   msg: 'Please enter your email address.',
+          test: v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v),
+          badMsg: 'That email address doesn’t look right.' },
+        { id: 'cf-message', msg: 'Please tell us what you need.' }
+      ];
+
+      function setError(input, message) {
+        const box = document.getElementById(input.id + '-error');
+        if (message) {
+          input.setAttribute('aria-invalid', 'true');
+          if (box) box.textContent = message;
+        } else {
+          input.removeAttribute('aria-invalid');
+          if (box) box.textContent = '';
+        }
+      }
+
+      function validate() {
+        let firstBad = null;
+        RULES.forEach(rule => {
+          const input = document.getElementById(rule.id);
+          const value = input.value.trim();
+          let message = '';
+          if (!value) message = rule.msg;
+          else if (rule.test && !rule.test(value)) message = rule.badMsg;
+          setError(input, message);
+          if (message && !firstBad) firstBad = input;
+        });
+        if (firstBad) firstBad.focus();
+        return !firstBad;
+      }
+
+      // Clear a field's error as soon as the visitor starts fixing it.
+      RULES.forEach(rule => {
+        const input = document.getElementById(rule.id);
+        input.addEventListener('input', () => {
+          if (input.getAttribute('aria-invalid') === 'true') setError(input, '');
+        });
+      });
+
+      // Success replaces the form. Failure leaves the form in place so the
+      // visitor keeps what they typed and can retry or copy it out.
+      function showSuccess() {
+        form.hidden = true;
+        // The "fill this out" heading and intro would read as nonsense sitting
+        // above a thank-you panel, so they go with the form.
+        const intro = document.getElementById('cf-intro');
+        if (intro) intro.hidden = true;
+        okPanel.hidden = false;
+        okPanel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+      function showError() {
+        errPanel.hidden = false;
+        errPanel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        // Move focus so screen readers land on the failure instead of on the
+        // re-enabled submit button, which would invite an endless retry loop.
+        errPanel.focus();
+      }
+
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        errPanel.hidden = true;
+        if (!validate()) return;
+
+        btn.disabled = true;
+        btn.textContent = 'Sending…';
+
+        const payload = Object.fromEntries(new FormData(form).entries());
+
+        try {
+          const res = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+          let data = null;
+          try { data = await res.json(); } catch (_) { /* non-JSON response */ }
+
+          if (res.ok && data && data.success) {
+            showSuccess();
+          } else {
+            showError();
+          }
+        } catch (_) {
+          // Network failure, offline, blocked request.
+          showError();
+        } finally {
+          btn.disabled = false;
+          btn.textContent = btnLabel;
+        }
+      });
+    })();
+  </script>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    const hdr = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      hdr.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
+
+</body>
+</html>
